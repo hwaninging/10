@@ -1,19 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//3. 문자열 복사
-//반환을 받는게 애매하면 반환을 안 받는 형태로 함수 호출 해보기 
+//4. 문자열 길이 계산 
+//실질적인 문자열 길이를 알수 있다. 
 
 int main(int argc, char *argv[])
 {
-    char src[] = "The worst things to eat before you sleep";
-    char dst[100];
+    char str[30] = "happy C programming";
     
-    //복사 대상 문자열 - 라이브러이 함수 활용하면 훨씬 쉬움 
-    strcpy (dst,src); //2개 받을 땐 , 해주면 끝 
-    
-    printf("copied string : %s\n", dst);
-  
+    printf("string %s length: %i\n", str, strlen(str));
+
   system("PAUSE");	
   return 0;
 }
