@@ -1,27 +1,33 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//5. 입력 받은 단어를 파일로 출력 
+//6. 파일을 읽어서 내용 출력
+//sample.txt 파일을 열어서 내용을 출력 
 
 int main(int argc, char *argv[])
 {
     char input[100];
     FILE* fp;
-    int i;
+    char c; 
     
     //fopen
-    fp = fopen("sample.txt","w");
-    
-    //3번 해야되니까 for문 사용 
-    for (i=0;i<3;i++)
+    fp = fopen("sample.txt","r");
+    if (fp == NULL)
     {
-    //fprintf
-    printf("input a word:");
-    scanf("%s", input); //%s : 문자 여러개 저장 - 형식 지정자 
-    //&input 할 필요 없음
-    fprintf(fp, "%s\n", input); //다 출력 가능!  fp 넣는거 중요 
+           printf("Failed to open file!\n");
+           return -1;
 }
-
+    #if 0
+    while( (c = fgetc(fp) != EOF)
+    {
+           putchar(C); //putchar 하면 알아서 해줌 printf보다 편함. 
+     }
+     #else
+     while( fgets(input, 100, fp) > 0 ) //배열 크기 100으로 잡았으니 100 넣기(배열크기안넘게) 
+     {
+            printf("%s", input);
+            }
+      #endif  
     //fcolse
     fclose(fp);
 
