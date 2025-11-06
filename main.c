@@ -1,17 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//1. 문자 변수 및 상수
+//2. 문자열 출력
 
 int main(int argc, char *argv[])
 {
-    //다른 형태로 저장 
-    char code1 = 'A'; //1bite 아스키코드로 저장 
-    int code2 = 65; // 4bite
+    int i = 0;
+    char str[4];
+    str[0] = 'a'; //abc문자열 출력하는 코드라고 생각하면 쉬움. 
+    str[1] = 'b';
+    str[2] = 'c';
+    str[3] = '\0';
     
-    //특정 변수를 숫자, 문자 관점으로 찍어본다. 
-    printf("code1 = %c, (%d)\n", code1, code1);
-    printf("code2 = %c, (%d)\n", code2, code2);
+    //str[i] 문자열의 맨 끝이 아니다 -> 같지 않다가 연산자로 나와야함. 
+    while (str[i] != '\0') { 
+          printf("%c", str[i]); //글자 하나 printf로 찍기  
+          i++;
+          }
   
   system("PAUSE");	
   return 0;
