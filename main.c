@@ -1,22 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//2. 문자열 출력
+//3. 문자열 복사
+//반환을 받는게 애매하면 반환을 안 받는 형태로 함수 호출 해보기 
 
 int main(int argc, char *argv[])
 {
-    int i = 0;
-    char str[4];
-    str[0] = 'a'; //abc문자열 출력하는 코드라고 생각하면 쉬움. 
-    str[1] = 'b';
-    str[2] = 'c';
-    str[3] = '\0';
+    char src[] = "The worst things to eat before you sleep";
+    char dst[100];
     
-    //str[i] 문자열의 맨 끝이 아니다 -> 같지 않다가 연산자로 나와야함. 
-    while (str[i] != '\0') { 
-          printf("%c", str[i]); //글자 하나 printf로 찍기  
-          i++;
-          }
+    //복사 대상 문자열 - 라이브러이 함수 활용하면 훨씬 쉬움 
+    strcpy (dst,src); //2개 받을 땐 , 해주면 끝 
+    
+    printf("copied string : %s\n", dst);
   
   system("PAUSE");	
   return 0;
